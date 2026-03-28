@@ -1,140 +1,165 @@
-import React, { useState } from "react";
-import logo from "./risingstar.png";
+import React, { useState, useEffect } from "react";
+import logo from "./prime.jpg.jpg";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrolled(window.scrollY > 50);
+        };
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
 
     return (
-        <nav className="bg-gradient-to-r from-indigo-700/40 via-purple-700/40 to-pink-600/40 backdrop-blur-xl shadow-2xl sticky top-0 z-50 border-b border-white/20 transition-all duration-500">
-            <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-                {/* Logo Section */}
-                <div className="flex items-center space-x-3 cursor-pointer group">
-                    <img
-                        src={logo}
-                        alt="Rising Star Logo"
-                        className="w-14 h-14 rounded-full border-2 border-yellow-400/80 shadow-lg group-hover:scale-110 transition-transform duration-300"
-                    />
-                    <h1 className="text-white text-2xl md:text-3xl font-extrabold tracking-wide group-hover:text-yellow-300 transition duration-300 drop-shadow-lg">
-                        Rising Star <span className="text-yellow-400">Badminton</span> Academy
-                    </h1>
-                </div>
+        <nav className={`fixed w-full z-50 transition-all duration-700 transform-gpu preserve-3d ${scrolled ? 'py-2' : 'py-4'}`}
+            style={{ transformStyle: 'preserve-3d' }}>
 
-                {/* Desktop Navigation */}
-                <ul className="hidden md:flex space-x-8 text-white font-semibold tracking-wide drop-shadow-md">
-                    <li className="relative group cursor-pointer">
-                        <Link to="/">Home</Link>
-                        <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-yellow-300 group-hover:w-full transition-all duration-300"></span>
+            {/* 3D Background Layer */}
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 via-indigo-900/90 to-purple-900/90 backdrop-blur-xl shadow-2xl border-b border-white/20"
+                style={{ transform: 'translateZ(-10px) scale(1.02)' }}>
+            </div>
+
+            {/* Main Content Layer */}
+            <div className="relative max-w-7xl mx-auto px-6 flex items-center justify-between"
+                style={{ transform: 'translateZ(20px)' }}>
+
+                {/* 3D Logo Section */}
+                <Link to="/" className="group perspective-1000">
+                    <div className="flex items-center space-x-3 cursor-pointer transform-gpu transition-all duration-500 hover:scale-105"
+                        style={{ transformStyle: 'preserve-3d' }}>
+
+                        {/* Logo with 3D effect */}
+                        <div className="relative transform-gpu transition-transform duration-500 group-hover:rotate-y-12">
+                            <img
+                                src={logo}
+                                alt="Prime Badminton Academy"
+                                className="w-16 h-16 rounded-full border-2 border-blue-400/80 shadow-2xl"
+                            />
+                            {/* Glow effect */}
+                            <div className="absolute inset-0 rounded-full bg-blue-400/20 blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+                        </div>
+
+                        {/* Text with 3D effect */}
+                        <div className="relative" style={{ transformStyle: 'preserve-3d' }}>
+                            <h1 className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-blue-200 to-purple-200">
+                                PRIME
+                            </h1>
+                            <div className="absolute inset-0 text-3xl font-black text-white blur-sm opacity-50"
+                                style={{ transform: 'translateZ(-5px)' }}>
+                                PRIME
+                            </div>
+                        </div>
+
+                        <div className="relative">
+                            <span className="text-2xl font-bold text-blue-400">BADMINTON</span>
+                            <div className="absolute -bottom-2 left-0 w-full h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+                        </div>
+
+                        <span className="text-xl font-semibold text-white/80">ACADEMY</span>
+                    </div>
+                </Link>
+
+                {/* Desktop Navigation with 3D effect */}
+                <ul className="hidden md:flex space-x-8 text-white font-semibold perspective-1000">
+                    <li className="relative group cursor-pointer transform-gpu transition-all duration-300 hover:translate-z-10"
+                        style={{ transformStyle: 'preserve-3d' }}>
+                        <Link to="/" className="block py-2">
+                            <span className="relative z-10">Home</span>
+                            {/* 3D underline effect */}
+                            <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+                            {/* Glow effect */}
+                            <span className="absolute inset-0 bg-blue-400/20 blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                        </Link>
                     </li>
-                    <li className="relative group cursor-pointer">
-                        <Link to="/about">About</Link>
-                        <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-yellow-300 group-hover:w-full transition-all duration-300"></span>
-                    </li>
-                    <li className="relative group cursor-pointer">
-                        <Link to="/coaches">Coaches</Link>
-                        <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-yellow-300 group-hover:w-full transition-all duration-300"></span>
-                    </li>
-                    <li className="relative group cursor-pointer">
-                        <Link to="/contactus">Contact Us</Link>
-                        <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-yellow-300 group-hover:w-full transition-all duration-300"></span>
-                    </li>
-                    <li className="relative group cursor-pointer">
-                        <Link to="/images">Images</Link>
-                        <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-yellow-300 group-hover:w-full transition-all duration-300"></span>
-                    </li>
+
+                    {['About', 'Coaches', 'Contact Us', 'Images'].map((item, index) => (
+                        <li key={item}
+                            className="relative group cursor-pointer transform-gpu transition-all duration-300 hover:translate-z-10"
+                            style={{ transformStyle: 'preserve-3d' }}>
+                            <Link to={`/${item.toLowerCase().replace(' ', '')}`} className="block py-2">
+                                <span className="relative z-10">{item}</span>
+                                {/* 3D underline effect */}
+                                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+                                {/* Glow effect */}
+                                <span className="absolute inset-0 bg-blue-400/20 blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                            </Link>
+                        </li>
+                    ))}
                 </ul>
 
-                {/* Join Button (Desktop only) */}
-                <button className="hidden md:block bg-gradient-to-r from-yellow-400 to-orange-400 text-black font-bold px-6 py-2 rounded-full hover:from-yellow-300 hover:to-yellow-500 hover:scale-110 hover:shadow-2xl transition-all duration-300">
-                    <Link to="/joinus">Join Us</Link>
-                </button>
+                {/* 3D Join Button */}
+                <div className="hidden md:block perspective-1000">
+                    <Link to="/joinus">
+                        <button className="relative px-8 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-bold rounded-full transform-gpu transition-all duration-500 hover:translate-z-10 hover:scale-110 group"
+                            style={{ transformStyle: 'preserve-3d' }}>
+                            <span className="relative z-10">Join Us</span>
+                            {/* 3D layers */}
+                            <span className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-700 rounded-full"
+                                style={{ transform: 'translateZ(-5px)' }}></span>
+                            <span className="absolute inset-0 bg-gradient-to-r from-blue-700 to-purple-800 rounded-full blur-md"
+                                style={{ transform: 'translateZ(-10px)' }}></span>
+                            {/* Shine effect */}
+                            <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent rounded-full translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></span>
+                        </button>
+                    </Link>
+                </div>
 
-                {/* Mobile Menu Button */}
-                <div className="md:hidden flex items-center">
+                {/* Mobile Menu Button with 3D effect */}
+                <div className="md:hidden perspective-1000">
                     <button
-                        className="text-white focus:outline-none hover:text-yellow-300 transition"
+                        className="relative w-12 h-12 text-white focus:outline-none transform-gpu transition-all duration-300 hover:rotate-12"
                         onClick={() => setIsOpen(!isOpen)}
+                        style={{ transformStyle: 'preserve-3d' }}
                     >
+                        <div className={`absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg transition-all duration-500 ${isOpen ? 'rotate-45' : ''}`}
+                            style={{ transform: 'translateZ(-5px)' }}></div>
                         {isOpen ? (
-                            <svg
-                                className="w-8 h-8"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth={2}
-                                    d="M6 18L18 6M6 6l12 12"
-                                />
+                            <svg className="w-8 h-8 mx-auto relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                             </svg>
                         ) : (
-                            <svg
-                                className="w-8 h-8"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth={2}
-                                    d="M4 6h16M4 12h16M4 18h16"
-                                />
+                            <svg className="w-8 h-8 mx-auto relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
                             </svg>
                         )}
                     </button>
                 </div>
             </div>
 
-            {/* Mobile Dropdown Menu with Animation */}
-            <div
-                className={`md:hidden overflow-hidden transition-all duration-500 ease-in-out ${isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
-                    }`}
-            >
-                <div className="bg-gradient-to-r from-indigo-800 via-purple-800 to-pink-700 px-6 py-4 space-y-4 text-white font-semibold border-t border-white/20">
+            {/* Mobile Menu with 3D animation */}
+            <div className={`md:hidden perspective-1000 transition-all duration-500 transform-gpu ${isOpen ? 'opacity-100 translate-y-0 rotate-x-0' : 'opacity-0 -translate-y-10 rotate-x-90 pointer-events-none'}`}
+                style={{ transformStyle: 'preserve-3d' }}>
+                <div className="mx-6 mt-2 bg-gradient-to-b from-blue-900/95 to-purple-900/95 backdrop-blur-xl rounded-xl border border-white/20 overflow-hidden"
+                    style={{ transform: 'translateZ(20px)' }}>
                     <Link
                         to="/"
                         onClick={() => setIsOpen(false)}
-                        className="block hover:text-yellow-300 transition"
+                        className="block px-6 py-4 text-white font-semibold hover:bg-white/10 transition-all duration-300 transform-gpu hover:translate-x-2"
+                        style={{ animation: `slideIn 0.3s ease-out 0s both` }}
                     >
                         Home
                     </Link>
-                    <Link
-                        to="/about"
-                        onClick={() => setIsOpen(false)}
-                        className="block hover:text-yellow-300 transition"
-                    >
-                        About
-                    </Link>
-                    <Link
-                        to="/coaches"
-                        onClick={() => setIsOpen(false)}
-                        className="block hover:text-yellow-300 transition"
-                    >
-                        Coaches
-                    </Link>
-                    <Link
-                        to="/contactus"
-                        onClick={() => setIsOpen(false)}
-                        className="block hover:text-yellow-300 transition"
-                    >
-                        Contact Us
-                    </Link>
-                    <Link
-                        to="/images"
-                        onClick={() => setIsOpen(false)}
-                        className="block hover:text-yellow-300 transition"
-                    >
-                        Images
-                    </Link>
+
+                    {['About', 'Coaches', 'Contact Us', 'Images'].map((item, index) => (
+                        <Link
+                            key={item}
+                            to={`/${item.toLowerCase().replace(' ', '')}`}
+                            onClick={() => setIsOpen(false)}
+                            className="block px-6 py-4 text-white font-semibold hover:bg-white/10 transition-all duration-300 transform-gpu hover:translate-x-2"
+                            style={{ animation: `slideIn 0.3s ease-out ${(index + 1) * 0.1}s both` }}
+                        >
+                            {item}
+                        </Link>
+                    ))}
+
                     <Link
                         to="/joinus"
                         onClick={() => setIsOpen(false)}
-                        className="block bg-gradient-to-r from-yellow-400 to-orange-400 text-black font-bold text-center py-2 rounded-full hover:from-yellow-300 hover:to-yellow-500 transition"
+                        className="block m-4 px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-bold text-center rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-300 transform-gpu hover:scale-105"
                     >
                         Join Us
                     </Link>

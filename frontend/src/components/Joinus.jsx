@@ -15,15 +15,12 @@ const CdJoinus = () => {
         email: "",
         address: "",
     });
-
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
     };
-
     const handleSubmit = async (e) => {
         e.preventDefault();
-
         try {
             const res = await fetch(`${API_BASE}/api/users/join`, {
                 method: "POST",
@@ -38,12 +35,10 @@ const CdJoinus = () => {
             if (!res.ok) {
                 throw new Error(data.message || "Failed to save data");
             }
-
             toast.success("✅ Joined successfully!", {
                 position: "top-center",
                 autoClose: 3000,
             });
-
             setFormData({
                 name: "",
                 gender: "",
@@ -52,7 +47,6 @@ const CdJoinus = () => {
                 email: "",
                 address: "",
             });
-
             try {
                 await emailjs.sendForm(
                     "service_mieivpm",
@@ -73,7 +67,6 @@ const CdJoinus = () => {
             });
         }
     };
-
     return (
         <div className="flex justify-center items-center min-h-screen bg-[#1b1b1b]">
             <form
@@ -84,8 +77,6 @@ const CdJoinus = () => {
                 <h2 className="text-3xl font-semibold text-center text-cyan-400 mb-6">
                     Join Us
                 </h2>
-
-                {/* Name */}
                 <input
                     type="text"
                     name="name"
@@ -95,8 +86,6 @@ const CdJoinus = () => {
                     required
                     className="w-full mb-4 p-2 rounded bg-[#1f1f1f]"
                 />
-
-                {/* Gender */}
                 <div className="mb-4 flex gap-4">
                     {["male", "female", "other"].map((g) => (
                         <label key={g}>
@@ -112,8 +101,6 @@ const CdJoinus = () => {
                         </label>
                     ))}
                 </div>
-
-                {/* Contact */}
                 <input
                     type="tel"
                     name="contact"
@@ -123,8 +110,6 @@ const CdJoinus = () => {
                     required
                     className="w-full mb-4 p-2 rounded bg-[#1f1f1f]"
                 />
-
-                {/* Level */}
                 <select
                     name="level"
                     value={formData.level}
@@ -138,7 +123,6 @@ const CdJoinus = () => {
                     <option value="advanced">Advanced</option>
                 </select>
 
-                {/* Email */}
                 <input
                     type="email"
                     name="email"
@@ -147,8 +131,6 @@ const CdJoinus = () => {
                     placeholder="Email"
                     className="w-full mb-4 p-2 rounded bg-[#1f1f1f]"
                 />
-
-                {/* Address */}
                 <textarea
                     name="address"
                     value={formData.address}
@@ -165,10 +147,8 @@ const CdJoinus = () => {
                     Submit
                 </button>
             </form>
-
             <ToastContainer />
         </div>
     );
 };
-
 export default CdJoinus;

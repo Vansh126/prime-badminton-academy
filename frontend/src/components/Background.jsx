@@ -1,65 +1,161 @@
 import React from 'react';
 import '../index.css';
+import "../css/Background.css";
 import CardsBack from './CardsBack';
 import Footer from './Footer';
 
 const Background = () => {
+    // Updated location URL with your new Google Maps embed code
+    const locationUrl = "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d162.01635134840063!2d76.28621125249188!3d31.46439301195053!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2sin!4v1774686415058!5m2!1sen!2sin";
+
     return (
         <>
+            <div className="dashboard-container">
+                <div className="dashboard-card">
+                    <div className="welcome-section">
+                        <h1 className="welcome-3d" data-text="Welcome to Prime Badminton Academy">Welcome to Prime Badminton Academy</h1>
+                        <div className="academy-badge">
+                            <i className="fas fa-badminton"></i> Est. 2024
+                        </div>
+                    </div>
 
-            {/* Hero Section */}
-            <section
-                className="relative w-full min-h-screen bg-cover bg-center bg-fixed pt-24"
-                style={{
-                    backgroundImage: `url('https://wallpaperaccess.com/full/2244772.jpg')`,
-                }}
-            >
-                {/* Hero Content */}
-                <div className="relative z-10 flex flex-col items-center justify-center text-center h-full px-6">
-                    {/* Heading */}
-                    <h1 className="text-5xl md:text-7xl font-extrabold mb-4 drop-shadow-lg text-white">
-                        <span className="text-white">Welcome to <br /> </span>
-                        <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 via-orange-300 to-red-500 animate-pulse">
-                            New Rising Star
-                        </span>
-                    </h1>
+                    <div className="cards-grid">
+                        <div className="flip-card">
+                            <div className="flip-card-inner">
+                                <div className="flip-card-front">
+                                    <i className="fas fa-trophy"></i>
+                                    <h3>Training Programs</h3>
+                                    <p>Professional badminton training</p>
+                                </div>
+                                <div className="flip-card-back">
+                                    <i className="fas fa-bullhorn"></i>
+                                    <p>Beginner to Advanced levels</p>
+                                    <p>Personalized coaching sessions</p>
+                                    <a href="#" className="btn-small">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
 
-                    {/* Subheading */}
-                    <h2 className="text-2xl md:text-4xl font-semibold mb-4 drop-shadow-md text-white">
-                        Badminton Academy
-                        🏸
-                    </h2>
+                        <div className="flip-card">
+                            <div className="flip-card-inner">
+                                <div className="flip-card-front">
+                                    <i className="fas fa-users"></i>
+                                    <h3>Elite Coaches</h3>
+                                    <p>National & International experts</p>
+                                </div>
+                                <div className="flip-card-back">
+                                    <i className="fas fa-medal"></i>
+                                    <p>Former national players</p>
+                                    <p>Certified coaching staff</p>
+                                    <a href="#" className="btn-small">Meet Coaches</a>
+                                </div>
+                            </div>
+                        </div>
 
-                    {/* Typewriter */}
-                    <h3 className="text-2xl md:text-3xl font-semibold mt-6 mb-8">
-                        <span className="block text-[#ec003f]">A Place Where</span>
-                        <span className="flex items-baseline text-white">
-                            <span className="mr-2">We</span>
-                            <span className="typewriter bg-clip-text text-transparent bg-gradient-to-r from-yellow-300 via-orange-400 to-red-500 font-bold">
-                                {/* Typewriter text goes here */}
+                        <div className="flip-card">
+                            <div className="flip-card-inner">
+                                <div className="flip-card-front">
+                                    <i className="fas fa-calendar-alt"></i>
+                                    <h3>Tournaments</h3>
+                                    <p>Regular competitions & events</p>
+                                </div>
+                                <div className="flip-card-back">
+                                    <i className="fas fa-chart-line"></i>
+                                    <p>Monthly championships</p>
+                                    <p>Ranking tournaments</p>
+                                    <a href="#" className="btn-small">View Schedule</a>
+                                </div>
+                            </div>
+                        </div>
 
-                            </span>
-                        </span>
-                    </h3>
+                        <div className="flip-card">
+                            <div className="flip-card-inner">
+                                <div className="flip-card-front">
+                                    <i className="fas fa-dumbbell"></i>
+                                    <h3>Facilities</h3>
+                                    <p>World-class infrastructure</p>
+                                </div>
+                                <div className="flip-card-back">
+                                    <i className="fas fa-building"></i>
+                                    <p>6 professional courts</p>
+                                    <p>Fitness center & recovery zone</p>
+                                    <a href="#" className="btn-small">Explore</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-                    {/* Paragraph */}
-                    <p className="max-w-2xl text-lg md:text-xl font-extrabold leading-relaxed mb-8 bg-gradient-to-r from-[#00d3f2] to-[#e60076] bg-clip-text text-transparent drop-shadow-[0_0_8px_rgba(0,0,0,0.5)]">
-                        Train with passion, play with excellence — where every player rises to become a star.
-                    </p>
+                    <div className="stats-section">
+                        <div className="stat-card">
+                            <span className="stat-number">500+</span>
+                            <span className="stat-label">Active Students</span>
+                        </div>
+                        <div className="stat-card">
+                            <span className="stat-number">25+</span>
+                            <span className="stat-label">Expert Coaches</span>
+                        </div>
+                        <div className="stat-card">
+                            <span className="stat-number">50+</span>
+                            <span className="stat-label">Tournaments Won</span>
+                        </div>
+                        <div className="stat-card">
+                            <span className="stat-number">6</span>
+                            <span className="stat-label">Professional Courts</span>
+                        </div>
+                    </div>
 
-                    {/* Cards BEFORE Join Button */}
-                    <CardsBack />
+                    {/* Location Section with Map */}
+                    <div className="location-section">
+                        <div className="location-title">
+                            <i className="fas fa-map-marker-alt"></i>
+                            Our Location
+                        </div>
+                        <div className="location-address">
+                            <p>Una, Himachal Pradesh - 174303, India</p>
+                        </div>
+                        <div className="map-container">
+                            <iframe
+                                src={locationUrl}
+                                title="Prime Badminton Academy Location - Una, Himachal Pradesh"
+                                style={{ border: 0, width: '100%', height: '100%' }}
+                                allowFullScreen=""
+                                loading="lazy"
+                                referrerPolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                        <div className="location-details">
+                            <div className="location-info">
+                                <i className="fas fa-phone"></i>
+                                <span>+91 12345 67890</span>
+                            </div>
+                            <div className="location-info">
+                                <i className="fas fa-envelope"></i>
+                                <span>info@primebadminton.com</span>
+                            </div>
+                            <div className="location-info">
+                                <i className="fas fa-clock"></i>
+                                <span>Mon-Sat: 6:00 AM - 10:00 PM</span>
+                            </div>
+                            <div className="location-info">
+                                <i className="fas fa-clock"></i>
+                                <span>Sunday: 8:00 AM - 6:00 PM</span>
+                            </div>
+                        </div>
+                    </div>
 
-                    {/* CTA Button */}
-                    <button className="relative z-20 mt-8 bg-gradient-to-r from-yellow-400 to-orange-500 text-black font-bold px-8 py-3 rounded-full hover:scale-110 hover:shadow-2xl transition-all duration-300">
-                        <a href="http://localhost:5173/joinus">Join The Academy</a>
-                    </button>
-                    <br />
-                    <br />
-                    <Footer />
+                    <div className="join-section">
+                        <button className="btn-join-3d">
+                            <i className="fas fa-badminton"></i> Join Prime Academy Now
+                            <i className="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
 
+                    <div className="footer">
+                        <p>&copy; 2024 Prime Badminton Academy | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+                        <p><i className="fas fa-map-marker-alt"></i> Una, Himachal Pradesh - 174303 | <i className="fas fa-phone"></i> +91 12345 67890</p>
+                    </div>
                 </div>
-            </section>
+            </div>
         </>
     );
 };
