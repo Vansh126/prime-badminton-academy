@@ -20,7 +20,7 @@ const Background = () => {
                     </div>
 
                     <div className="cards-grid">
-                        <div className="flip-card">
+                        <div className="flip-card training-bg">
                             <div className="flip-card-inner">
                                 <div className="flip-card-front">
                                     <i className="fas fa-trophy"></i>
@@ -36,7 +36,7 @@ const Background = () => {
                             </div>
                         </div>
 
-                        <div className="flip-card">
+                        <div className="flip-card coaches-bg">
                             <div className="flip-card-inner">
                                 <div className="flip-card-front">
                                     <i className="fas fa-users"></i>
@@ -52,7 +52,7 @@ const Background = () => {
                             </div>
                         </div>
 
-                        <div className="flip-card">
+                        <div className="flip-card tournaments-bg">
                             <div className="flip-card-inner">
                                 <div className="flip-card-front">
                                     <i className="fas fa-calendar-alt"></i>
@@ -68,7 +68,7 @@ const Background = () => {
                             </div>
                         </div>
 
-                        <div className="flip-card">
+                        <div className="flip-card facilities-bg">
                             <div className="flip-card-inner">
                                 <div className="flip-card-front">
                                     <i className="fas fa-dumbbell"></i>

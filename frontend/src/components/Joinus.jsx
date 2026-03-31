@@ -74,7 +74,7 @@ const CdJoinus = () => {
                 onSubmit={handleSubmit}
                 className="bg-[#111111] p-8 rounded-2xl shadow-2xl w-full max-w-md border-2 border-cyan-400/80 text-white"
             >
-                <h2 className="text-3xl font-semibold text-center text-cyan-400 mb-6">
+                <h2 className="text-3xl font-semibold text-center text-cyan-400 mb-6 mt-20">
                     Join Us
                 </h2>
                 <input

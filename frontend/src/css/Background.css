@@ -1,27 +1,18 @@
 /* Prime Badminton Academy Styling */
 /* Color Scheme: Black (#000000), Aqua (#00FFFF), White (#FFFFFF) */
 
-/* Add padding-top to prevent content from hiding behind fixed header */
-body {
-    font-family: 'Poppins', 'Inter', 'Segoe UI', sans-serif;
-    background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
-    min-height: 100vh;
-    perspective: 1200px;
-    overflow-x: hidden;
-    /* padding-top: 80px; */
-    /* Prevents content from hiding behind fixed header */
-}
-
-/* ===== MAIN DASHBOARD CONTAINER ===== */
+/* ===== PAGE-SPECIFIC CONTAINER PADDING ===== */
 .dashboard-container {
     max-width: 1400px;
     width: 100%;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 2rem 2rem 2rem 2rem;
+    padding-top: 120px;
+    /* Fixed navbar overlap ONLY for Background page */
     position: relative;
 }
 
-/* 3D Floating Dashboard Card */
+/* ===== MAIN DASHBOARD CONTAINER ===== */
 .dashboard-card {
     background: rgba(0, 0, 0, 0.85);
     backdrop-filter: blur(10px);
@@ -93,7 +84,7 @@ body {
     margin: 2rem 0;
 }
 
-/* 3D Flip Cards with Aqua Theme */
+/* ===== FLIP CARDS ===== */
 .flip-card {
     background: transparent;
     perspective: 1500px;
@@ -129,12 +120,56 @@ body {
     align-items: center;
 }
 
-.flip-card-front {
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(20, 20, 20, 0.9));
-    backdrop-filter: blur(10px);
-    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.5);
+/* Card Backgrounds with Overlays */
+.training-bg .flip-card-front {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4)), url(/trpr.jpg) center/cover;
+    background-size: cover;
+    background-position: center;
 }
 
+.coaches-bg .flip-card-front {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4)), url(/coch.webp) center/cover;
+    background-size: cover;
+    background-position: center;
+}
+
+.facilities-bg .flip-card-front {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4)), url(/faclitis.webp) center/cover;
+    background-size: cover;
+    background-position: center;
+}
+
+.tournaments-bg .flip-card-front {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4)), url(/trnamnt.jpg) center/cover;
+    background-size: cover;
+    background-position: center;
+}
+
+.training-bg .flip-card-back {
+    background: linear-gradient(135deg, rgba(0, 255, 255, 0.85), rgba(0, 204, 204, 0.7)), url(/trpr.jpg) center/cover;
+    background-size: cover;
+    background-position: center;
+}
+
+.coaches-bg .flip-card-back {
+    background: linear-gradient(135deg, rgba(0, 255, 255, 0.85), rgba(0, 204, 204, 0.7)), url(/coch.webp) center/cover;
+    background-size: cover;
+    background-position: center;
+}
+
+.facilities-bg .flip-card-back {
+    background: linear-gradient(135deg, rgba(0, 255, 255, 0.85), rgba(0, 204, 204, 0.7)), url(/faclitis.webp) center/cover;
+    background-size: cover;
+    background-position: center;
+}
+
+.tournaments-bg .flip-card-back {
+    background: linear-gradient(135deg, rgba(0, 255, 255, 0.85), rgba(0, 204, 204, 0.7)), url(/trnamnt.jpg) center/cover;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Front card styling */
 .flip-card-front i {
     font-size: 3.5rem;
     color: #00FFFF;
@@ -152,14 +187,15 @@ body {
 .flip-card-front p {
     color: #cccccc;
     font-size: 0.95rem;
+    backdrop-filter: blur(5px);
 }
 
+/* Back card styling */
 .flip-card-back {
-    background: linear-gradient(135deg, #00FFFF, #00CCCC);
-    transform: rotateY(180deg);
+    backdrop-filter: blur(10px);
+    background: linear-gradient(135deg, rgba(0, 255, 255, 0.9), rgba(0, 204, 204, 0.8));
     color: #000000;
     font-weight: 600;
-    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.5);
 }
 
 .flip-card-back p {
@@ -363,81 +399,166 @@ body {
 
 /* ===== RESPONSIVE DESIGN ===== */
 @media (max-width: 768px) {
-    body {
-        padding-top: 70px;
-    }
-
     .dashboard-container {
-        padding: 1rem;
+        padding: 1rem 1rem 1rem 1rem;
+        padding-top: 100px;
     }
 
     .dashboard-card {
-        padding: 1.5rem;
+        padding: 1.5rem 1rem;
+        border-radius: 1.5rem;
     }
 
     .welcome-3d {
-        font-size: 2rem;
+        font-size: 2.2rem;
+        line-height: 1.2;
+    }
+
+    .academy-badge {
+        padding: 0.4rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .cards-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
 
     .flip-card {
-        height: 280px;
+        height: 260px;
+    }
+
+    .flip-card-front,
+    .flip-card-back {
+        padding: 1.2rem;
+    }
+
+    .flip-card-front i {
+        font-size: 2.8rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .flip-card-front h3 {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .flip-card-front p {
+        font-size: 0.85rem;
+    }
+
+    .flip-card-back p {
+        font-size: 0.9rem;
+        margin: 0.4rem 0;
+    }
+
+    .btn-small {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
     }
 
     .stats-section {
         flex-direction: column;
+        gap: 1rem;
     }
 
     .stat-card {
-        width: 100%;
+        min-width: auto;
+        padding: 1.2rem 1rem;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+    }
+
+    .stat-label {
+        font-size: 0.8rem;
     }
 
     .location-title {
-        font-size: 1.4rem;
+        font-size: 1.6rem;
     }
 
     .location-address {
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
 
     .map-container {
-        height: 300px;
+        height: 280px;
     }
 
     .location-details {
         flex-direction: column;
-        gap: 0.8rem;
+        gap: 1rem;
         align-items: center;
     }
 
     .location-info {
-        font-size: 0.85rem;
+        font-size: 0.9rem;
+    }
+
+    .location-info i {
+        font-size: 1.1rem;
+    }
+
+    .join-section {
+        margin: 2rem 0;
+    }
+
+    .btn-join-3d {
+        padding: 0.8rem 1.8rem;
+        font-size: 1rem;
+    }
+
+    .footer {
+        margin-top: 2rem;
+        font-size: 0.8rem;
+        padding-top: 1rem;
     }
 }
 
 @media (max-width: 480px) {
-    body {
-        padding-top: 60px;
+    .dashboard-container {
+        padding: 0.8rem 0.8rem 0.8rem 0.8rem;
+        padding-top: 90px;
+    }
+
+    .dashboard-card {
+        padding: 1.2rem 0.8rem;
+        border-radius: 1rem;
     }
 
     .welcome-3d {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
     }
 
-    .btn-join-3d {
-        padding: 0.8rem 1.5rem;
-        font-size: 1rem;
-    }
-
-    .flip-card-front h3 {
-        font-size: 1.4rem;
+    .flip-card {
+        height: 240px;
     }
 
     .flip-card-front i {
-        font-size: 2.5rem;
+        font-size: 2.4rem;
+    }
+
+    .flip-card-front h3 {
+        font-size: 1.3rem;
+    }
+
+    .flip-card-front p {
+        font-size: 0.8rem;
+    }
+
+    .stat-number {
+        font-size: 1.8rem;
     }
 
     .map-container {
         height: 250px;
+    }
+
+    .btn-join-3d {
+        padding: 0.7rem 1.5rem;
+        font-size: 0.9rem;
     }
 }
 
@@ -477,4 +598,13 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
     background: #00FFFF;
+}
+
+/* Global font */
+body {
+    font-family: 'Poppins', 'Inter', 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+    min-height: 100vh;
+    perspective: 1200px;
+    overflow-x: hidden;
 }

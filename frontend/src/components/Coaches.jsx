@@ -22,7 +22,7 @@ const Coaches = () => {
     return (
         <section className="min-h-screen bg-[#1b1b1b] py-16 px-6">
             <div className="max-w-6xl mx-auto">
-                <h2 className="text-4xl md:text-5xl font-extrabold text-cyan-400 text-center mb-12 drop-shadow-lg">
+                <h2 className="text-4xl md:text-5xl font-extrabold text-cyan-400 text-center mb-12 mt-15 drop-shadow-lg">
                     Our Expert Coaches
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

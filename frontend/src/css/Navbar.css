@@ -34,7 +34,8 @@
 
     /* Navbar Container */
     .navbar-container {
-        @apply fixed w-full z-50 transition-all duration-700 transform-gpu;
+        @apply fixed w-full z-50 transition-all duration-700 transform-gpu h-16 md:h-20;
+        max-height: 80px;
         transform-style: preserve-3d;
         backface-visibility: hidden;
     }
