@@ -1,6 +1,7 @@
 import React from 'react';
 import '../index.css';
 import "../css/Background.css";
+import { Link } from 'react-router-dom';
 import CardsBack from './CardsBack';
 import Footer from './Footer';
 
@@ -20,6 +21,8 @@ const Background = () => {
                     </div>
 
                     <div className="cards-grid">
+
+
                         <div className="flip-card training-bg">
                             <div className="flip-card-inner">
                                 <div className="flip-card-front">
@@ -47,7 +50,7 @@ const Background = () => {
                                     <i className="fas fa-medal"></i>
                                     <p>Former national players</p>
                                     <p>Certified coaching staff</p>
-                                    <a href="#" className="btn-small">Meet Coaches</a>
+                                    <Link to="/coaches" className="btn-small">Meet Coaches</Link>
                                 </div>
                             </div>
                         </div>
@@ -79,7 +82,7 @@ const Background = () => {
                                     <i className="fas fa-building"></i>
                                     <p>6 professional courts</p>
                                     <p>Fitness center & recovery zone</p>
-                                    <a href="#" className="btn-small">Explore</a>
+                                    <Link to="/about" className="btn-small">Explore</Link>
                                 </div>
                             </div>
                         </div>

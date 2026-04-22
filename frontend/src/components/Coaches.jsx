@@ -7,11 +7,12 @@ const Coaches = () => {
             image: "https://via.placeholder.com/300x200?text=Coach+1",
             bio: "Expert badminton coach with 15 years of experience, specializing in singles and doubles training."
         },
-        {
-            name: "Rohan Dubedi",
-            image: "https://via.placeholder.com/300x200?text=Coach+2",
-            bio: "Former national player, focusing on youth development and advanced techniques."
-        },
+        // {
+        //     name: "Rohan Dubedi",
+        //     image: "https://via.placeholder.com/300x200?text=Coach+2",
+        //     bio: "Former national player, focusing on youth development and advanced techniques."
+        // },,
+
         {
             name: "Physio",
             image: "https://via.placeholder.com/300x200?text=Coach+3",
