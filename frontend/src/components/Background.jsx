@@ -147,10 +147,12 @@ const Background = () => {
                     </div>
 
                     <div className="join-section">
-                        <button className="btn-join-3d">
-                            <i className="fas fa-badminton"></i> Join Prime Academy Now
-                            <i className="fas fa-arrow-right"></i>
-                        </button>
+                        <Link to="/joinus">
+                            <button className="btn-join-3d">
+                                <i className="fas fa-badminton"></i> Join Prime Academy Now
+                                <i className="fas fa-arrow-right"></i>
+                            </button>
+                        </Link>
                     </div>
 
                     <div className="footer">
