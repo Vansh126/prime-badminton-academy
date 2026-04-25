@@ -4,7 +4,7 @@ const Coaches = () => {
     const coaches = [
         {
             name: "Karan Chaudhary",
-            image: "https://via.placeholder.com/300x200?text=Coach+1",
+            image: "./public/shaktimaan.jpg",
             bio: "Expert badminton coach with 15 years of experience, specializing in singles and doubles training."
         },
         // {
@@ -15,7 +15,7 @@ const Coaches = () => {
 
         {
             name: "Physio",
-            image: "https://via.placeholder.com/300x200?text=Coach+3",
+            image: "../public/shaktimaan2.png",
             bio: "Certified trainer with a passion for building champions through disciplined coaching."
         }
     ];

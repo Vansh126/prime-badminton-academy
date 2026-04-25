@@ -32,7 +32,8 @@ const Background = () => {
                                 </div>
                                 <div className="flip-card-back">
                                     <i className="fas fa-bullhorn"></i>
-                                    <p>Beginner to Advanced levels</p>
+                                    <p>Beginner</p>
+                                    <p>to Advanced levels</p>
                                     <p>Personalized coaching sessions</p>
                                     <a href="#" className="btn-small">Learn More</a>
                                 </div>
