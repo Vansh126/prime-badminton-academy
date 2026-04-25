@@ -14,14 +14,14 @@ const Footer = () => {
                 <span className="text-sm md:text-base text-gray-300">
                     Made with <span className="text-red-500 inline-block animate-pulse">❤️</span> by
                 </span>
-                <a
+                {/* <a
                     href="https://www.instagram.com/vansh_singh.rajput125/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="ml-1 font-semibold text-gray-300 hover:text-blue-400 transition-colors duration-300 cursor-pointer"
                 >
                     Vansh Singh
-                </a>
+                </a> */}
             </div>
 
             {/* Right: Instagram */}
