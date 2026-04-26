@@ -1,0 +1,267 @@
+/* Eye-Catching Banner Styles - For Upcoming Facilities & Advertisements */
+
+.advertisement-banner {
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 10;
+}
+
+.blinking-banner {
+    background: linear-gradient(135deg, #667eea, #764ba2, #f093fb, #feca57);
+    background-size: 300% 300%;
+    border-radius: 12px;
+    padding: 1rem 2rem;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    animation: gradientShift 4s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.blinking-banner:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+}
+
+.banner-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 2;
+}
+
+.banner-icon {
+    font-size: 1.8rem;
+    animation: bounce 0.8s ease infinite;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+.banner-text {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    letter-spacing: 2px;
+    animation: textPulse 1s ease infinite;
+}
+
+@keyframes textPulse {
+
+    0%,
+    100% {
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    50% {
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    }
+}
+
+.banner-highlight {
+    font-size: 1.6rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, #FFD700, #FFA500, #FF6347);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    padding: 0.25rem 1rem;
+    border-radius: 50px;
+    position: relative;
+    animation: scalePulse 0.8s ease infinite;
+}
+
+@keyframes scalePulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.banner-arrow {
+    font-size: 1.8rem;
+    color: white;
+    font-weight: bold;
+    animation: slideRight 0.6s ease infinite;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+@keyframes slideRight {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(8px);
+    }
+}
+
+.banner-pulse {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 70%);
+    animation: pulse 1.5s ease infinite;
+    pointer-events: none;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    50% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: scale(1.2);
+        opacity: 0;
+    }
+}
+
+/* Glowing effect behind text */
+.blinking-banner::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 70%);
+    animation: rotate 4s linear infinite;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Shine effect on hover */
+.blinking-banner::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: left 0.6s ease;
+}
+
+.blinking-banner:hover::after {
+    left: 100%;
+}
+
+/* Different Color Variations */
+.blinking-banner.purple-theme {
+    background: linear-gradient(135deg, #667eea, #764ba2, #f093fb, #feca57);
+    background-size: 300% 300%;
+}
+
+.blinking-banner.blue-theme {
+    background: linear-gradient(135deg, #00f2fe, #4facfe, #0062e6);
+    background-size: 300% 300%;
+}
+
+.blinking-banner.orange-theme {
+    background: linear-gradient(135deg, #ff416c, #ff4b2b, #f9d423);
+    background-size: 300% 300%;
+}
+
+.blinking-banner.green-theme {
+    background: linear-gradient(135deg, #a8ff78, #78ffd6, #4facfe);
+    background-size: 300% 300%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+
+    .banner-icon,
+    .banner-arrow {
+        font-size: 1.2rem;
+    }
+
+    .banner-text {
+        font-size: 1rem;
+    }
+
+    .banner-highlight {
+        font-size: 1.1rem;
+    }
+
+    .blinking-banner {
+        padding: 0.7rem 1rem;
+    }
+
+    .banner-content {
+        gap: 0.5rem;
+    }
+}
+
+/* Small screens */
+@media (max-width: 480px) {
+
+    .banner-icon,
+    .banner-arrow {
+        font-size: 1rem;
+    }
+
+    .banner-text {
+        font-size: 0.85rem;
+    }
+
+    .banner-highlight {
+        font-size: 0.9rem;
+        padding: 0.15rem 0.5rem;
+    }
+
+    .blinking-banner {
+        padding: 0.5rem 0.8rem;
+    }
+}

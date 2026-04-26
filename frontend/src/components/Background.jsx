@@ -6,23 +6,40 @@ import CardsBack from './CardsBack';
 import Footer from './Footer';
 
 const Background = () => {
-    // Updated location URL with your new Google Maps embed code
-    const locationUrl = "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d162.01635134840063!2d76.28621125249188!3d31.46439301195053!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2sin!4v1774686415058!5m2!1sen!2sin";
+    // Exact coordinates for the pin
+    const latitude = 31.464391;
+    const longitude = 76.286321;
+
+    // Option B: If you don't have API key, use this format (works without API key)
+    const locationUrlWithoutKey = `https://maps.google.com/maps?q=${latitude},${longitude}&z=19&output=embed`;
 
     return (
         <>
             <div className="dashboard-container">
                 <div className="dashboard-card">
+                    {/* Blinking Advertisement Banner */}
+                    <div className="advertisement-banner">
+                        <Link to="/joinus" className="ad-link">
+                            <div className="blinking-banner">
+                                <div className="banner-content">
+                                    <span className="banner-icon">🎯</span>
+                                    <span className="banner-text">Limited Slots Available</span>
+                                    <span className="banner-highlight">Join Now</span>
+                                    <span className="banner-arrow">→</span>
+                                    <span className="banner-icon">🏸</span>
+                                </div>
+                            </div>
+                        </Link>
+                    </div>
+
                     <div className="welcome-section">
-                        <h1 className="welcome-3d" data-text="Welcome to Prime Badminton Academy">Welcome to Prime Badminton Academy</h1>
+                        <h1 className="welcome-3d" data-text="Welcome to Prime Badminton Academy">Welcome to Prime Badminton Academy</h1><br />
                         <div className="academy-badge">
-                            <i className="fas fa-badminton"></i> Est. 2024
+                            <i className="fas fa-badminton"></i> Est. 2025
                         </div>
                     </div>
 
                     <div className="cards-grid">
-
-
                         <div className="flip-card training-bg">
                             <div className="flip-card-inner">
                                 <div className="flip-card-front">
@@ -81,7 +98,7 @@ const Background = () => {
                                 </div>
                                 <div className="flip-card-back">
                                     <i className="fas fa-building"></i>
-                                    <p>6 professional courts</p>
+                                    <p>5 professional courts</p>
                                     <p>Fitness center & recovery zone</p>
                                     <Link to="/about" className="btn-small">Explore</Link>
                                 </div>
@@ -91,35 +108,39 @@ const Background = () => {
 
                     <div className="stats-section">
                         <div className="stat-card">
-                            <span className="stat-number">500+</span>
-                            <span className="stat-label">Active Students</span>
+                            <span className="stat-number">Slots Open</span>
+                            <span className="stat-label">For Admission</span>
                         </div>
                         <div className="stat-card">
-                            <span className="stat-number">25+</span>
+                            <span className="stat-number">3</span>
                             <span className="stat-label">Expert Coaches</span>
                         </div>
                         <div className="stat-card">
-                            <span className="stat-number">50+</span>
-                            <span className="stat-label">Tournaments Won</span>
+                            <span className="stat-number">1</span>
+                            <span className="stat-label">Professional Conditioning coach</span>
                         </div>
                         <div className="stat-card">
-                            <span className="stat-number">6</span>
+                            <span className="stat-number">5</span>
                             <span className="stat-label">Professional Courts</span>
                         </div>
                     </div>
 
-                    {/* Location Section with Map */}
+                    {/* Location Section with Map and Pin */}
                     <div className="location-section">
                         <div className="location-title">
                             <i className="fas fa-map-marker-alt"></i>
                             Our Location
                         </div>
                         <div className="location-address">
-                            <p>Una, Himachal Pradesh - 174303, India</p>
+                            <p>
+                                <strong>Prime Badminton Academy</strong><br />
+                                Una, Himachal Pradesh - 174303, India<br />
+                                {/* <span className="coordinates">📍 Coordinates: {latitude}, {longitude}</span> */}
+                            </p>
                         </div>
                         <div className="map-container">
                             <iframe
-                                src={locationUrl}
+                                src={locationUrlWithoutKey}
                                 title="Prime Badminton Academy Location - Una, Himachal Pradesh"
                                 style={{ border: 0, width: '100%', height: '100%' }}
                                 allowFullScreen=""
@@ -166,4 +187,4 @@ const Background = () => {
     );
 };
 
-export default Background;
+export default Background;  

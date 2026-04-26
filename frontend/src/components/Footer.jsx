@@ -6,13 +6,13 @@ const Footer = () => {
 
             {/* Left: Text */}
             <div className="mb-4 md:mb-0 text-center md:text-left">
-                <span className="text-lg md:text-xl font-semibold">2024 All Rights Reserved</span>
+                <span className="text-lg md:text-xl font-semibold">2025 All Rights Reserved</span>
             </div>
 
             {/* Center: Made with love - Clickable name */}
             <div className="mb-4 md:mb-0 text-center">
                 <span className="text-sm md:text-base text-gray-300">
-                    Made with <span className="text-red-500 inline-block animate-pulse">❤️</span> by
+                    Made with <span className="text-red-500 inline-block animate-pulse">❤️</span>
                 </span>
                 {/* <a
                     href="https://www.instagram.com/vansh_singh.rajput125/"
