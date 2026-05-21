@@ -151,11 +151,11 @@ const Background = () => {
                         <div className="location-details">
                             <div className="location-info">
                                 <i className="fas fa-phone"></i>
-                                <span>+91 12345 67890</span>
+                                <span>9815078906</span>
                             </div>
                             <div className="location-info">
                                 <i className="fas fa-envelope"></i>
-                                <span>info@primebadminton.com</span>
+                                <span>primeacademyhp@gmail.com</span>
                             </div>
                             <div className="location-info">
                                 <i className="fas fa-clock"></i>
