@@ -15,6 +15,97 @@ const Background = () => {
 
     return (
         <>
+            {/* Full-Screen Hero Section */}
+            <section className="hero-section">
+                <div className="hero-inner">
+                    {/* Left - Text Content */}
+                    <div className="hero-text">
+                        <h1 className="hero-headline">
+                            <span className="white-text">WHERE</span>
+                            <span className="gold-text">CHAMPIONS</span>
+                            <span className="white-text">ARE MADE</span>
+                        </h1>
+                        <p className="hero-subheadline">
+                            High Performance Training for Future Champions.
+                        </p>
+                        <Link to="/joinus" className="hero-cta-btn">
+                            JOIN NOW
+                        </Link>
+                    </div>
+
+                    {/* Right - 3D Player Visual */}
+                    <div className="hero-visual">
+                        <div className="player-3d-scene">
+                            {/* Yellow motion lines - right to left */}
+                            <div className="motion-lines">
+                                <div className="motion-line ml-1"></div>
+                                <div className="motion-line ml-2"></div>
+                                <div className="motion-line ml-3"></div>
+                                <div className="motion-line ml-4"></div>
+                                <div className="motion-line ml-5"></div>
+                                <div className="motion-line ml-6"></div>
+                                <div className="motion-line ml-7"></div>
+                            </div>
+
+                            {/* 3D Player SVG Silhouette */}
+                            <div className="player-3d-figure">
+                                {/* Shadow layers for 3D depth */}
+                                <div className="player-shadow-1"></div>
+                                <div className="player-shadow-2"></div>
+                                <div className="player-shadow-3"></div>
+                                <svg viewBox="0 0 400 600" className="player-svg" xmlns="http://www.w3.org/2000/svg">
+                                    {/* Player Body */}
+                                    <g fill="#d4a017" className="player-body">
+                                        {/* Head */}
+                                        <ellipse cx="200" cy="95" rx="35" ry="40" />
+                                        {/* Neck */}
+                                        <rect x="190" y="130" width="20" height="20" rx="5" />
+                                        {/* Torso */}
+                                        <path d="M160,150 Q155,180 150,220 L170,280 Q200,290 230,280 L250,220 Q245,180 240,150 Z" />
+                                        {/* Right arm (raised with racket) */}
+                                        <path d="M240,160 Q270,140 290,100 Q300,80 310,50" strokeWidth="18" stroke="#d4a017" fill="none" strokeLinecap="round" />
+                                        {/* Left arm (extended for balance) */}
+                                        <path d="M160,160 Q130,175 100,200 Q85,215 70,230" strokeWidth="16" stroke="#d4a017" fill="none" strokeLinecap="round" />
+                                        {/* Right leg (jumping) */}
+                                        <path d="M220,275 Q240,340 260,400 Q265,430 270,460" strokeWidth="20" stroke="#d4a017" fill="none" strokeLinecap="round" />
+                                        {/* Left leg (bent back) */}
+                                        <path d="M180,275 Q170,340 180,380 Q200,400 230,410" strokeWidth="20" stroke="#d4a017" fill="none" strokeLinecap="round" />
+                                        {/* Right foot */}
+                                        <path d="M270,455 Q280,465 295,468" strokeWidth="14" stroke="#d4a017" fill="none" strokeLinecap="round" />
+                                        {/* Left foot */}
+                                        <path d="M225,405 Q240,415 255,418" strokeWidth="14" stroke="#d4a017" fill="none" strokeLinecap="round" />
+                                        {/* Shorts */}
+                                        <path d="M165,265 Q160,300 175,320 L200,310 L225,320 Q240,300 235,265 Z" />
+                                    </g>
+
+                                    {/* Racket */}
+                                    <g className="racket-group">
+                                        {/* Racket handle */}
+                                        <line x1="308" y1="52" x2="340" y2="15" stroke="#a67c00" strokeWidth="6" strokeLinecap="round" />
+                                        {/* Racket head */}
+                                        <ellipse cx="358" cy="0" rx="30" ry="22" fill="none" stroke="#d4a017" strokeWidth="4" transform="rotate(-30, 358, 0)" />
+                                        {/* Racket strings (simplified) */}
+                                        <ellipse cx="358" cy="0" rx="22" ry="16" fill="rgba(212,160,23,0.15)" transform="rotate(-30, 358, 0)" />
+                                        <line x1="342" y1="-15" x2="374" y2="15" stroke="rgba(212,160,23,0.3)" strokeWidth="1" />
+                                        <line x1="338" y1="5" x2="378" y2="-5" stroke="rgba(212,160,23,0.3)" strokeWidth="1" />
+                                        <line x1="350" y1="-20" x2="366" y2="20" stroke="rgba(212,160,23,0.3)" strokeWidth="1" />
+                                    </g>
+
+                                    {/* Shuttlecock */}
+                                    <g className="shuttlecock">
+                                        <circle cx="330" cy="-30" r="6" fill="#f9fafb" />
+                                        <path d="M324,-30 L310,-45 M330,-36 L325,-52 M336,-30 L340,-46" stroke="#d1d5db" strokeWidth="2" fill="none" />
+                                    </g>
+                                </svg>
+                            </div>
+
+                            {/* Ground glow */}
+                            <div className="player-ground-glow"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <div className="dashboard-container">
                 <div className="dashboard-card">
                     {/* Blinking Advertisement Banner */}

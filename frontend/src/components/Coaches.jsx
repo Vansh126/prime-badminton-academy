@@ -11,7 +11,7 @@ const Coaches = () => {
         },
         {
             name: "Professional Conditioning coach",
-            image: "/shaktimaan2.png",
+            image: "/playerhero.png",
             bio: "Certified trainer with a passion for building champions through disciplined coaching.",
             instagram: "https://www.instagram.com/karan_choudhary9090/"
         }
