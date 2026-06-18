@@ -23,7 +23,7 @@ const Coaches = () => {
             ]
         },
         {
-            name: "Conditioning Coach",
+            name: "Pankaj Minhas",
             image: "/coach.jpg",
             title: "NIS Certified Strength & Conditioning Coach",
             bio: "NIS certified professional coach specializing in Strength and Conditioning (S&C) for athletes. Building champions through science-based training.",
