@@ -23,7 +23,7 @@ const Contactus = () => {
                             href="tel:8193775647"
                             className="text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-blue-200 to-cyan-300 hover:scale-105 transition-transform duration-300 whitespace-nowrap"
                         >
-                            8193775647
+                            8197375647
                         </a>
                     </div>
 
