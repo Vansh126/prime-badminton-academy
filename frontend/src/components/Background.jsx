@@ -53,7 +53,7 @@ const Background = () => {
                                 <div className="player-shadow-1"></div>
                                 <div className="player-shadow-2"></div>
                                 <div className="player-shadow-3"></div>
-                                <svg viewBox="0 0 400 600" className="player-svg" xmlns="http://www.w3.org/2000/svg">
+                                <svg viewBox="-40 -80 480 680" className="player-svg" xmlns="http://www.w3.org/2000/svg">
                                     {/* Player Body */}
                                     <g fill="#d4a017" className="player-body">
                                         {/* Head */}
